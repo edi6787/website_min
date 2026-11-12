@@ -27,12 +27,20 @@
         if(!yearStr || yearStr==null)
             document.write("계산을 취소했습니다.")
         else{
-            year=parseInt(yearStr);
-            month=parseInt(monthStr);
-            day=parseInt(dayStr);
+            let year=parseInt(yearStr);L
+            let month=parseInt(monthStr);
+            let day=parseInt(dayStr);
             let targetDate = new Date(year, month - 1, day);
             let diffMs = targetDate.getTime() - now.getTime();
             diffday=Math.ceil(diffMs / (1000 * 60 * 60 * 24))
+            if (diffDay > 0) {
+                document.write("D-" + diffDay);
+            } else if (diffDay == 0) {
+                document.write("D-Day 입니다!");
+            } else {
+                document.write("D+" + Math.abs(diffDay));
+            }
+
         }
     </script>
 </section>
