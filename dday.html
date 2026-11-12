@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>인터넷활용 실습 템플릿</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>이름: 김민석</h1>
+  <p class="subtitle">한 줄 소개: 안녕하세요 소프트웨어학과 23학번 김민석입니다.</p>
+</header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="contact.html">Contact</a>
+</nav>
+<main class="container">
+<section>
+    <script> 
+        let now=new Date();
+        let yearStr = prompt("목표 연도를 입력하세요 (예: 2025)", "2025");
+        let monthStr = prompt("목표 월을 입력하세요 (1~12)", "12");
+        let dayStr = prompt("목표 일을 입력하세요 (1~31)", "25");
+        if(!yearStr || yearStr==null)
+            document.write("계산을 취소했습니다.")
+        else{
+            year=parseInt(yearStr);
+            month=parseInt(monthStr);
+            day=parseInt(dayStr);
+            let targetDate = new Date(year, month - 1, day);
+            let diffMs = targetDate.getTime() - now.getTime();
+            diffday=Math.ceil(diffMs / (1000 * 60 * 60 * 24))
+        }
+    </script>
+</section>
+</main>
+<footer>
+  <small>&copy; <span id="year"></span> 이름: 김민석</small>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
